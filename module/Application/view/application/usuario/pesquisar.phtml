@@ -1,0 +1,95 @@
+
+    <!-- Name -->
+    <legend><strong> Busca por usuarios</strong></legend>
+
+    <form id="PesquisaUsuario" class="form-horizontal" method="POST" >
+
+        <!-- Text input-->
+
+        <div class="col-md-4" class="form-group">
+
+            <label class="col-md-4 control-label" for="id">Idendtificador</label>
+
+            <div class="col-md-8">
+
+                <input id="id" name="id" placeholder="Busca por Idendtificador" class="form-control input-md" type="text">
+
+            </div>
+
+        </div>
+
+
+        <!-- Text input-->
+
+        <div class="col-md-4" class="form-group">
+
+            <label class="col-md-4 control-label" for="nome">Nome</label>
+
+            <div class="col-md-8">
+
+                <input id="nome" name="nome" placeholder="Busca por nome" class="form-control input-md" type="text">
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Text input-->
+
+        <div class="col-md-4" class="form-group">
+
+            <label class="col-md-4 control-label" for="Usuario">Usuario</label>
+
+            <div class="col-md-8">
+
+                <input id="usuario" name="usuario" placeholder="Busca por Usuario" class="form-control input-md" type="text">
+
+
+
+            </div>
+
+        </div>
+
+
+        <!-- Button -->
+
+        <div class="form-group">
+            <button type="button" id="pesqUser" name="pesquisar" value="Pesquisar"  class="btn btn-primary" >Pesquisar</button>
+        </div>
+
+    </form>
+
+        <h2>Resultados da pesquisa:</h2>
+
+    <div class="table-responsive">
+
+        <table id="tabUser" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+
+            <thead>
+            <tr >
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Usuario</th>
+                <th>Operação</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+                <?php foreach ($this->resultSet as $result) { ?>
+                    <tr>
+                        <td><?php echo $result['id'] ?></td>
+                        <td><?php echo $result['nome'] ?></td>
+                        <td><?php echo $result['usuario'] ?></td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" type="submit">Remover</button>
+                            <button class="btn btn-success btn-xs" type="submit">Visualizar</button>
+                            <button class="btn btn-primary btn-xs" type="submit">Copiar</button>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+
+        </table>
+    </div>

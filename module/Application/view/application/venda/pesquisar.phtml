@@ -1,0 +1,109 @@
+<legend><strong>Busca por vendas</strong></legend>
+
+<form  class="form-horizontal" method="POST" >
+
+    <!-- Text input-->
+
+    <div class="col-md-3" class="form-group">
+
+        <label class="col-md-1 control-label" for="documento">Documento</label>
+
+        <div class="col-md-12">
+
+            <input id="documento" name="documento" placeholder="Documento" class="form-control input-md" type="text">
+
+        </div>
+
+    </div>
+
+    <!-- Text input-->
+
+    <div class="col-md-3" class="form-group">
+
+        <label class="col-md-1 control-label" for="razao">Nome</label>
+
+        <div class="col-md-12">
+
+            <input id="nome" name="nome" placeholder="Nome" class="form-control input-md" type="text">
+
+        </div>
+
+    </div>
+
+
+    <!-- Text input-->
+
+    <div class="col-md-3" class="form-group">
+
+        <label class="col-md-1 control-label" for="Id">Cidade</label>
+
+        <div class="col-md-12">
+
+            <input id="cidade" name="cidade" placeholder="cidade" class="form-control input-md" type="text">
+
+        </div>
+
+    </div>
+
+    <!-- Text input-->
+
+    <div class="col-md-3" class="form-group">
+
+        <label class="col-md-1 control-label" >Val.Selo</label>
+
+        <div class="col-md-12">
+
+            <input id="validadeSelo" name="validadeSelo" placeholder="validadeSelo" class="form-control input-md date" type="text">
+
+        </div>
+
+    </div>
+
+    <!-- Button -->
+
+    <div class="form-group">
+
+        <label class="col-md-12" class="control-label" for="buscar"></label>
+
+        <button type="button" id="pesqVenda" name="pesqVenda"   class="btn btn-primary" > Pesquisar  </button>
+    </div>
+
+</form>
+
+<h2>Resultados da pesquisa:</h2>
+
+
+<div class="table-responsive">
+    <table id="tabBuscaVenda" class="table table-striped table-bordered" cellspacing="0" width="100%"  >
+        <thead>
+        <tr >
+            <th>ID Venda</th>
+            <th>Documento</th>
+            <th>Nome</th>
+            <th>Data Venda</th>
+            <th>Operações</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <?php foreach ($this->resultSet as $result) {
+
+            ?>
+            <tr>
+                <td><?php echo $result['v.id'] ?></td>
+                <td><?php echo $result['documento'] ?></td>
+                <td><?php echo $result['nome'] ?></td>
+                <td><?php echo $result['v.dataVenda'] ?></td>
+                <td>
+                    <button class="btn btn-danger btn-xs" type="submit">Remover</button>
+                    <button class="btn btn-success btn-xs" type="submit">Visualizar</button>
+                    <button class="btn btn-primary btn-xs"  type="submit">Vender</button>
+                </td>
+            </tr>
+        <?php }?>
+
+        </tbody>
+
+    </table>
+</div>

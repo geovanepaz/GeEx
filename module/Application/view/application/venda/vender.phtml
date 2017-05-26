@@ -1,0 +1,288 @@
+<fieldset >
+
+         <!-- Form Name  -->
+    <legend><strong>Venda</strong></legend>
+
+
+    <div class="col-md-12 cliente">
+
+        <div class="col-md-3" class="form-group">
+
+
+            <label class="col-md-1 control-label" for="documento_cliente">Documento</label>
+
+            <div class="col-md-12">
+
+                <input id="documento_cliente" name="documento_cliente"  type="text"   value="<?php echo $this->resultSet['documento'];?>" placeholder="CPF/CNPJ" class="form-control input-md" >
+
+            </div>
+
+        </div>
+
+
+        <!-- buton -->
+
+        <div class="col-md-1" id="buscar">
+            <button   class="btn btn-primary"  id="buscarCli" name="buscarCli" type="submit">Buscar</button>
+        </div>
+
+
+
+        <!-- Text input-->
+
+        <div class="col-md-4" class="form-group">
+
+            <label class="col-md-1 control-label" for="nome">Nome</label>
+
+            <div class="col-md-12">
+
+                <input id="nome" name="nome" type="text" value="<?php echo $this->resultSet['nome'];?>" placeholder="Nome\Fantasia" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Text input-->
+
+        <div class="col-md-4" class="form-group">
+
+            <label class="col-md-1 control-label" for="razaoSocial">R.Social</label>
+
+            <div class="col-md-12">
+
+                <input id="razaoSocial" name="razaoSocial" type="text" value="<?php echo $this->resultSet['razaoSocial'];?>" placeholder="Razão Social" class="form-control input-md">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-12 cliente">
+        <!-- Text input-->
+
+        <div class="col-md-2" class="form-group">
+
+            <label class="col-md-1 control-label" for="inscricaoEstadual">IE</label>
+
+            <div class="col-md-12">
+
+                <input id="inscricaoEstadual" name="inscricaoEstadual" type="number"  value="<?php echo $this->resultSet['inscricaoEstadual'];?>" placeholder="Inscrição Estadual" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+
+        <!-- Text input-->
+
+        <div class="col-md-2" class="form-group">
+
+            <label class="col-md-1 control-label" for="telefone">Tel</label>
+
+            <div class="col-md-12">
+
+                <input id="telefone" name="telefone" type="number" value="<?php echo $this->resultSet['telefone'];?>" placeholder="Telefone" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Text input-->
+
+        <div class="col-md-3" class="form-group">
+
+            <label class="col-md-1 control-label" for="email">Email</label>
+
+            <div class="col-md-12">
+
+                <input type="email"  id="email" name="email"  placeholder="Email"  value="<?php echo $this->resultSet['email'];?>" class="form-control input-md" autocomplete="on">
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Text input-->
+
+        <div class="col-md-2" class="form-group">
+
+            <label class="col-md-1 control-label" for="cep">CEP</label>
+
+            <div class="col-md-12">
+
+                <input id="cep" name="cep" type="cep" value="<?php echo $this->resultSet['cep'];?>" placeholder="CEP" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+        <!-- Text input-->
+
+        <div class="col-md-3" class="form-group">
+
+            <label class="col-md-1 control-label" for="Cidade">Cidade</label>
+
+            <div class="col-md-12">
+
+                <input id="cidade" name="cidade" value="<?php echo $this->resultSet['cidade'];?>" placeholder="Cidade" class="form-control input-md">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-12 cliente">
+        <!-- Text input-->
+
+        <div class="col-md-3" class="form-group">
+
+            <label class="col-md-1 control-label" for="bairro">Bairro</label>
+
+            <div class="col-md-12">
+
+                <input id="bairro" name="bairro" type="text"  value="<?php echo $this->resultSet['bairro'];?>" placeholder="Bairro" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Text input-->
+
+        <div class="col-md-4" class="form-group">
+
+            <label class="col-md-1 control-label" for="Rua">Rua</label>
+
+            <div class="col-md-12">
+
+                <input id="rua" name="rua" type="text"  value="<?php echo $this->resultSet['rua'];?>" placeholder="Rua" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+
+        <!-- Text input-->
+
+        <div class="col-md-2" class="form-group">
+
+            <label class="col-md-1 control-label" for="numero">Numero</label>
+
+            <div class="col-md-12">
+
+                <input id="numero" name="numero" type="number" value="<?php echo $this->resultSet['numero'];?>" placeholder="Numero" class="form-control input-md">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Text input-->
+
+        <div class="col-md-3" class="form-group">
+
+            <label class="col-md-1 control-label" for="complemento">Complemento</label>
+
+            <div class="col-md-12">
+
+                <input id="complemento" name="complemento" value="<?php echo $this->resultSet['complemento'];?>" placeholder="Complemento" class="form-control input-md">
+
+            </div>
+        </div>
+    </div>
+    <!---->
+
+
+<h4>Produtos</h4>
+
+     <form id="itensProduto" name="itensProduto" class="col-md-12 form-horizontal "  action="#" method="POST">
+
+
+         <!--campo oculto esta aqui para não ter perigo de perder este dado na inserção e remoção das linhas da tabela -->
+         <input id="id_cliente" name="id_cliente" type="hidden" placeholder="id_cliente" class="form-control input-md">
+
+         <!--deixar a tabela responsiva-->
+         <div class="col-md-12 table-responsive">
+             <table class="col-md-12 table" id="products-table" >
+                 <tbody>
+                 <tr >
+                     <th>Codigo</th>
+                     <th>Agente Extintor</th>
+                     <th>Capacidade Extintora</th>
+                     <th>Carga</th>
+                     <th>Validade Selo</th>
+                     <th>Data Reteste</th>
+                     <th>Quantidade</th>
+                     <th>V. Unitario</th>
+                     <th>V. Total</th>
+                     <th>Ações</th>
+                 </tr>
+                 <tr>
+                     <td> <input id="idp_0" name="produto[0][id_produto]" type="text" placeholder="Codigo produto" class="form-control input-md codigo_produto"  ></td>
+                     <td><input id="age_0" name="produto[0][agenteExtintor]" type="text" placeholder="Agente Extintor" class="form-control input-md" ></td>
+                     <td><input id="cap_0" name="produto[0][capacidadeExtintora]" type="text" placeholder="Capacidade Extintora" class="form-control input-md"></td>
+                     <td><input id="car_0" name="carga" type="text" placeholder="Carga" value="" class="form-control input-md"></td>
+                     <td> <input  id="sel_0" name="produto[0][validadeSelo]" class="form-control input-md data-completa" type="text" placeholder="yyy/mm/aa"></td>
+                     <td><input id="ret_0" name="produto[0][dataReteste]" type="text" placeholder="Ano" class="form-control input-md data-ano" ></td>
+                     <td><input id="qua_0"  name="produto[0][quantidade]"  onblur="calculaTotalItem(this)" type="text" placeholder="Quantidade" class="form-control input-md" ></td>
+                     <td><input id="uni_0" name="produto[0][valor_unitario]" onblur="calculaTotalItem(this)" type="text" placeholder="Valor Unitario" class="form-control input-md" ></td>
+                     <td><input id="tot_0" name="produto[0][valor_total]"  onblur="calculaTotalItem(this)" type="text" placeholder="Valor Total" class="form-control input-md" ></td>
+                     <td>
+                         <button onclick="remove(this)" type="button" class="btn btn-danger">Remover</button>
+                     </td>
+                 </tr>
+                 </tbody>
+                 <tfoot>
+                 <tr >
+                     <td colspan="5" style="text-align: left;">
+                         <button onclick="AddTableRow()" type="button" class="btn btn-success" >Adicionar Produto</button>
+                     </td>
+                     <td></td>
+                     <td></td>
+
+                     <td style="text-align: right;">
+
+                         <input id="descontos" onblur="calculaTotalVenda(this)" name="descontos" type="text" placeholder="Desconto" class="form-control input-md">
+
+                     </td>
+
+                     <td style="text-align: right;">
+
+                                     <div class='input-group date' id='datetimepicker10'>
+                                         <input id="valor_total" name="valor_total" onblur="calculaTotalVenda(this)" type="text" placeholder="Total"  class="form-control input-md">
+                                         <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-eur">
+                                            </span>
+                                        </span>
+                                     </div>
+                     </td>
+
+                 </tr>
+                 </tfoot>
+             </table>
+         </div>
+
+
+         <div class="col-md-12"  class="form-group">
+
+             <label class="control-label" for="vender"></label>
+
+             <button type="submit" id="finalizar"  class="btn btn-primary" >Finalizar venda </button>
+
+         </div>
+
+     </form>
+</fieldset>
+<!-- Button (Double)-->
+
+
+

@@ -1,0 +1,116 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="pt-BR">
+    <head>
+
+        <?php echo $this->headTitle($this->translate('Extincêndio'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+           //ele quebra o css
+             ->prependStylesheet($this->basePath('css/dataTables-1.10.13.bootstrap.min.css'))
+           //para tentar a tabela bonita remova este
+            //->prependStylesheet($this->basePath('css/jquery-1.10.13.dataTables.min.css'))
+            ->prependStylesheet($this->basePath('css/inicial.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.css.map'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css.map'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.css.map'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css.map'))
+            ->prependStylesheet($this->basePath('css/jquery-ui.css'))
+
+        ?>
+
+
+
+        <!-- Scripts-->
+        <?php echo $this->headScript()
+            //quebra e não funciona os menus
+           // ->prependFile($this->basePath('js/bootstrap.min.js'))
+
+            ->prependFile($this->basePath('js/cadastros.js'))
+            ->prependFile($this->basePath('js/pesquisas.js'))
+            ->prependFile($this->basePath('js/cidades.js'))
+           ->prependFile($this->basePath('js/jquery.dataTables.min.js'))
+            ->prependFile($this->basePath('js/dataTables.bootstrap.min.js'))
+
+            ->prependFile($this->basePath('js/jquery-ui.js'))
+            ->prependFile($this->basePath('js/jquery-1.12.4.js'))
+            ->prependFile($this->basePath('js/tabela.js'))
+            ->prependFile($this->basePath('js/bootstrap.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.1.min.js'))
+            ->prependFile($this->basePath('js/npm.js'))
+            ->prependFile($this->basePath('js/cidades.js'))
+
+
+            ?>
+
+
+
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+        <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+        <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+
+
+        <!-- Le styles
+
+        -->
+
+
+
+
+    </head>
+    <body>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <nav class="navbar navbar-default">
+
+        <ul  class="nav nav-pills">
+            <li  role="presentation" class="active"  ><a href="/" id="inicial" >Home</a></li>
+
+            <li role="presentation" class="dropdown" >
+                <a id="menu" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Cadastrar <span class="caret"></span>
+                    <ul class="dropdown-menu">
+                            <li role="presentation"  ><a href="/usuario/cadastrar" id="IncluirUsuario">Usuario</a></li>
+                        <li role="presentation"><a href="/produto/cadastrar" id="inclurProduto">Produto</a></li>
+                        <li role="presentation"><a href="/cliente/cadastrar" id="incluirCliente">Cliente</a></li>
+                    </ul>
+            </li>
+
+            <li role="presentation" class="dropdown" >
+                <a id="menu" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Pesquisar <span class="caret"></span>
+                    <ul class="dropdown-menu">
+                        <li role="presentation"><a href="/usuario/pesquisar" id="listarUsuario">Usuario</a></li>
+                        <li role="presentation"><a href="/produto/pesquisar" id="listarProduto">Produtos</a></li>
+                        <li role="presentation"><a href="/cliente/pesquisar" id="listarCliente">Cliente</a></li>
+                        <li role="presentation"><a href="/venda/pesquisar" id="listarCliente">Vendas</a></li>
+                    </ul>
+            </li>
+            <li role="presentation"><a href="/venda/vender" id="sair">Vender</a></li>
+            <li role="presentation"><a href="/" id="sair">Sair</a></li>
+            </li>
+        </ul>
+    </nav>
+        <div class="container" >
+            <?php echo $this->content; ?>
+            <hr>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+
+    </body>
+</html>
